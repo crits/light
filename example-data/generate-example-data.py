@@ -136,6 +136,7 @@ events = [
          'event_reported': '2018-01-06T00:00:00.000Z',
          'event_threat': 'Phishing',
          'event_type': 'Blog Post',
+         'event_title': 'Malicious Document Targets Pyeongchang Olympics',
         }
 ]
 
