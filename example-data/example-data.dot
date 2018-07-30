@@ -1,0 +1,68 @@
+graph G {
+ n1[label="농식품부, 평창 동계올림픽 대비 축산악취 방지대책 관련기관 회의 개최.doc"]
+ n2[label="Organized by Ministry of Agriculture and Forestry and Pyeongchang Winter Olympics.doc"]
+ n3[label="43.249.39.152"]
+ n4[label="info@nctc.go.kr"]
+ n5[label="ospf1-apac-sg.stickyadstv.com"]
+ n6[label="https://www.thlsystems.forfirst.cz/images/adv_s3.png"]
+ n7[label="/images/adv_s3.png"]
+ n8[label="adv_s3.png"]
+ n9[label="adv_s3.png"]
+ n10[label="www.thlsystems.forfirst.cz"]
+ n11[label="&&set  xmd=echo  iex (ls env:tjdm).value ^| powershell -noni  -noex  -execut bypass -noprofile  -wind  hidden     – && cmd   /C%xmd%"]
+ n12[label="https://www.thlsystems.forfirst.cz:443/components/com_tags/views/login/process.php"]
+ n13[label="https://www.thlsystems.forfirst.cz/components/com_tags/views/login/process.php"]
+ n14[label="/components/com_tags/views/login/process.php"]
+ n15[label="/com_tags/views/login/process.php"]
+ n16[label="https://200.122.181.63:443/components/com_tags/views/news.php"]
+ n17[label="/components/com_tags/views/news.php"]
+ n18[label="/components/com_tags/"]
+ n19[label="200.122.181.63"]
+ n20[label="C:\Windows\system32\schtasks.exe” /Create /F /SC DAILY /ST 14:00 /TN “MS Remoute Update” /TR C:\Users\Ops03\AppData\Local\view.hta"]
+ n21[label="C:\Users\Ops03\AppData\Local\view.hta"]
+ n22[label="%AppData%\Local\view.hta"]
+ n23[label="view.hta"]
+ n24[label="81.31.47.101"]
+ n25[label="thlsystems.forfirst.cz"]
+ n26[label="https://www.thlsystems.forfirst.cz/components/com_tags/views/admin/get.php"]
+ n27[label="/components/com_tags/views/admin/get.php"]
+ n28[label="mafra.go.kr.jeojang.ga"]
+ n29[label="위험 경보 (전국야생조류 분변 고병원성 AI(H5N6형) 검출).docx"]
+ n30[label="c388b693d10e2b84af52ab2c29eb9328e47c3c16"]
+ n31[label="8ad0a56e3db1e2cd730031bdcae2dbba3f7aba9c"]
+ n32[label="Ice Hockey"]
+ n1 -- n31
+ n29 -- n30
+ n2 -- n1
+ n31 -- n32
+ n31 -- n3
+ n31 -- n4
+ n31 -- n5
+ n31 -- n6
+ n6 -- n7
+ n6 -- n8
+ n8 -- n9
+ n6 -- n10
+ n9 -- n11
+ n9 -- n12
+ n12 -- n13
+ n12 -- n14
+ n12 -- n15
+ n12 -- n10
+ n13 -- n14
+ n13 -- n15
+ n13 -- n10
+ n9 -- n21
+ n21 -- n16
+ n16 -- n17
+ n16 -- n18
+ n16 -- n19
+ n20 -- n9
+ n21 -- n22
+ n21 -- n23
+ n10 -- n25
+ n25 -- n24
+ n21 -- n26
+ n26 -- n27
+ n19 -- n28
+}
