@@ -15,7 +15,7 @@ def route_framework(app):
 
     # Dynamically find modules
     # Adapted from: https://stackoverflow.com/questions/1057431/how-to-load-all-modules-in-a-folder
-    for importer, pkgname, ispkg in pkgutil.iter_modules(['./light/photons']):
+    for importer, pkgname, ispkg in pkgutil.walk_packages(['./light/photons']):
         # Build the "full package name" by joining the modules dir name
         # with the module file name (minus .py)
         full_pkg_name = 'photons.{pkgname}'.format(pkgname=pkgname)
