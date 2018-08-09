@@ -1,18 +1,18 @@
 import falcon
 
-resources = ["SourceAccess","SourceAccessList"]
+resources = ["SourceSet","SourceItem"]
 
-class SourceAccessList(object):
+class SourceSet(object):
     def routes_set(self, app):
-        app.add_route('/source_access', self)
+        app.add_route('/sources', self)
 
     def on_get(self, req, res):
         res.status = falcon.HTTP_200
         res.body = ('Testing source access gets.')
 
-class SourceAccess(object):
+class SourceItem(object):
     def routes_set(self, app):
-        app.add_route('/source_access/{source}', self)
+        app.add_route('/sources/{source}', self)
 
     def on_get(self, req, res, source):
         res.status = falcon.HTTP_200
