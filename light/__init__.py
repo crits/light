@@ -7,6 +7,8 @@ import gunicorn.app.base
 from gunicorn.six import iteritems
 
 from .framework import route_framework
+from . import backend
+from .drivers.disk import disk_driver
 
 
 def number_of_workers():
@@ -59,6 +61,9 @@ def main():
         'bind': '%s:%s' % (args.host, args.port),
         'workers': args.workers,
     }
+
+    # Instantiate the backend driver (TODO: Make this generic and a configurable)
+    backend.current_driver = disk_driver('./demo_db')
 
     # Create a Falcon app.
     app = falcon.API()
