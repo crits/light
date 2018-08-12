@@ -1,3 +1,4 @@
+bson
 cython
 falcon --install-option="--no-binary :all:"
 gunicorn
