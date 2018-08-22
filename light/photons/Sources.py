@@ -22,7 +22,7 @@ class Source(LightDoc):
         if oid == None:
             # If oid is None, presume we're creating a new Source object
             #
-            # Populate Source-specific attributes, not it LightDoc
+            # Populate Source-specific attributes, not in LightDoc
             self.data['active'] = active
             self.data['source_name'] = source_name
 
