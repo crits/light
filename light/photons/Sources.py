@@ -17,7 +17,7 @@ resources = ["SourceSet","SourceItem"]
 class Source(LightDoc):
     set_name = 'sources'
     def __init__(self, source_name=None, active=True, oid=None):
-        super(Source, self).__init__(set_name=Source.set_name, oid=oid)
+        super(Source, self).__init__(oid=oid)
 
         if oid == None:
             # If oid is None, presume we're creating a new Source object

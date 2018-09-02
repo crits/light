@@ -9,9 +9,9 @@ from . import backend
 # }
 #
 class LightDoc(object):
-    def __init__(self, set_name, oid=None):
+    def __init__(self, oid=None):
         self.valid = False
-        self.set_name = set_name
+        self.set_name = type(self).set_name
 
         if oid == None:
             # If instance construction gives us a NoneType oid, then we presume
