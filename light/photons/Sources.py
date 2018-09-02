@@ -1,7 +1,7 @@
 import falcon
 import json
 from bson import ObjectId
-from light.light_types import LightDoc
+from light.light_types import LightDoc, LightField, LightStr, LightInt, LightBool
 
 resources = ["SourceSet","SourceItem"]
 
@@ -16,20 +16,8 @@ resources = ["SourceSet","SourceItem"]
 #
 class Source(LightDoc):
     set_name = 'sources'
-    def __init__(self, source_name=None, active=True, oid=None):
-        super(Source, self).__init__(oid=oid)
-
-        if oid == None:
-            # If oid is None, presume we're creating a new Source object
-            #
-            # Populate Source-specific attributes, not in LightDoc
-            self.data['active'] = active
-            self.data['source_name'] = source_name
-
-            # If we are initialized with a proper source_name, then
-            # set 'valid' to True
-            if self.data['source_name'] != None:
-                self.valid = True
+    source_name = LightStr(init="Test", required=True)
+    active = LightBool(init=True)
 
     def get_all():
         for source_obj in LightDoc.get_all(Source.set_name, Source):
@@ -67,7 +55,7 @@ class SourceSet(object):
         if req.content_length > 0:
             json_input = json.load(req.stream)
             if 'active' in json_input and 'source_name' in json_input:
-                src_obj = Source(json_input['source_name'], json_input['active'])
+                src_obj = Source(source_name=LightStr(init=json_input['source_name']), active=LightBool(init=json_input['active']))
                 src_obj.save()
                 res.body = json.dumps({'success': True, 'oid': src_obj.json()['id']})
             else:
