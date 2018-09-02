@@ -1,6 +1,48 @@
 import bson
 from . import backend
 
+class LightField(object):
+    def __init__(self, init=None, required=False, pk=False, unique=False):
+        self.required = required
+        self.pk = pk
+        self.unique = unique
+        self.assign(init)
+        self.field_name = type(self).__name__
+
+    def val(self):
+        return self.value
+
+    def assign(self, val):
+        self.value = val
+        return val
+
+    def __str__(self):
+        return str(self.val())
+
+class LightStr(LightField):
+    def __init__(self, init=None, required=False, pk=False, unique=False):
+        super(LightStr, self).__init__(init, required, pk, unique)
+
+    def assign(self, val):
+        assert(isinstance(val, str))
+        super(LightStr, self).assign(val)
+
+class LightInt(LightField):
+    def __init__(self, init=None, required=False, pk=False, unique=False):
+        super(LightInt, self).__init__(init, required, pk, unique)
+
+    def assign(self, val):
+        assert(isinstance(val, int))
+        super(LightInt, self).assign(val)
+
+class LightBool(LightField):
+    def __init__(self, init=None, required=False, pk=False, unique=False):
+        super(LightBool, self).__init__(init, required, pk, unique)
+
+    def assign(self, val):
+        assert(isinstance(val, bool))
+        super(LightBool, self).assign(val)
+
 # A base type for a document object that, at least, matches the following
 # signature:
 #
