@@ -9,6 +9,17 @@ class TestResource(object):
         """Handles all GET requests."""
         _test_resource_get(req, res)
 
+def load_driver(options):
+    # Dynamically find db driver among installed packages, and return it if it
+    # is found
+    for importer, pkgname, ispkg in pkgutil.walk_packages(['./light/drivers']):
+        if pkgname == options['dbdriver']:
+            full_pkg_name = 'drivers.{pkgname}'.format(pkgname=pkgname)
+            module = importer.find_module(full_pkg_name).load_module(full_pkg_name)
+            cobj = getattr(module, '{pkgname}_driver'.format(pkgname=pkgname))
+            cinst = cobj(options['dbstore'])
+            return cinst
+
 def route_framework(app):
     # Instantiate the TestResource class
     test_resource = TestResource()
